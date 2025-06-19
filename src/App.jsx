@@ -27,6 +27,10 @@ function App() {
         index: true,
         element: <Home />
       },
+      {
+        path: ':category',
+        element: <ProductListing />
+      }
     ]
   },
   ])

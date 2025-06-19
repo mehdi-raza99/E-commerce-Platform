@@ -1,19 +1,19 @@
 import React from 'react'
 
-const ProductCard = ({id,brand,images,description,price,rating}) => {
+const ProductCard = ({id,brand,image,description,price,rating}) => {
   //id,brand,image,description,price,rating5
   return (
     
 
-<div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <img className="rounded-t-lg" src="/Categories/Beauty-Background.jpg" alt="" />
+<div className="h-[550px] max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between">
+        <img className=" h-[220px] w-[220px] rounded-t-lg self-center" src={image[0]} alt="" />
     <div className="p-5">
         <a href="#">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">brand</h5>
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{brand}</h5>
         </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">description</p>
-        <p className="mb-3 font-normal text-amber-50">price</p>
-        <p className="mb-3 font-normal text-gray-700 dark:text-red-400">rating</p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{description}</p>
+        <p className="mb-3 font-normal text-amber-50">{price}$</p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-red-400">Rating: {rating}</p>
         <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Add to Cart
              <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">

@@ -1,7 +1,14 @@
-export function fetchProductByCategory(category) {
+export async function fetchProductByCategory({ category }) {
   console.log(category);
 
-  fetch(`https://dummyjson.com/products/category/${category.name}`)
-    .then((res) => res.json())
-    .then((data) => data);
+  try {
+    const response = await fetch(
+      `https://dummyjson.com/products/category/${category}`
+    );
+    const data = await response.json();
+    return data.products; // Return the fetched data
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error; // Rethrow the error for further handling
+  }
 }
