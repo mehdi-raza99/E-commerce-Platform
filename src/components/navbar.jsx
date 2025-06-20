@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaShoppingCart } from 'react-icons/fa';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,17 @@ const NavBar = () => {
           <li><Link to="/about">About Us</Link></li>
           <li><Link to="/services">Products</Link></li>
           <li><Link to="/contact">Contact</Link></li>
+          <div style={{ position: 'relative' }}>
+          <FaShoppingCart size={24} />
+          <span style={{
+            position: 'absolute', top: -8, right: -8, background: 'red',
+            color: 'white', borderRadius: '50%', padding: '2px 6px', fontSize: '12px'
+          }}>
+            3
+          </span>
+        </div>
+
+
         </ul>
 
         {/* Mobile Menu Button */}
@@ -49,6 +61,17 @@ const NavBar = () => {
             <li><Link to="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
             <li><Link to="/career" onClick={() => setIsOpen(false)}>Career</Link></li>
             <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
+            <div style={{ position: 'relative' }}>
+            <FaShoppingCart size={24} />
+            <span style={{
+              position: 'absolute', top: -8, right: -8, background: 'red',
+              color: 'white', borderRadius: '50%', padding: '2px 6px', fontSize: '12px'
+            }}>
+              3
+            </span>
+          </div>
+
+
           </ul>
         </div>
       )}
