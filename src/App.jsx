@@ -5,6 +5,9 @@ import MainLayout from './components/MainLayout';
 import ProductListing from './components/ProductListing';
 import { useEffect, useState } from 'react';
 import { fetchProductByCategory } from './utils/fetchProductsByCategory';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Cart from './pages/Cart';
 
 
 function App() {
@@ -26,6 +29,18 @@ function App() {
       {
         index: true,
         element: <Home />
+      },
+      {
+        path: 'about',
+        element: <About />
+      },
+      {
+        path: 'contact',
+        element: <Contact />
+      },
+      {
+        path: 'checkout',
+        element: <Cart />
       },
       {
         path: ':category',
