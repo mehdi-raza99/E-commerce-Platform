@@ -2,12 +2,29 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ProductContext } from '../context/Products.context';
 import ProductCard from './ProductCard';
+import { fetchProductByCategory } from '../utils/fetchProductsByCategory';
+
+
 
 const ProductListing = () => {
-    const { Products } = useContext(ProductContext);
+    const { Products,setProducts } = useContext(ProductContext);
     const [productCards, setProductCards] = useState([]);
 
+    const {category}=useParams()
+    
+
     useEffect(() => {
+        async function fetchData() {
+            const data=await fetchProductByCategory({category})
+            setProducts(data);
+        }
+        fetchData()
+          
+    },[])
+
+
+    useEffect(() => {
+        
         if (Products) {
             const cards = Products.map((product) => (
                 <ProductCard 

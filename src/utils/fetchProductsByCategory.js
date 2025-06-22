@@ -1,5 +1,4 @@
 export async function fetchProductByCategory({ category }) {
-  console.log(category);
 
   try {
     const response = await fetch(
