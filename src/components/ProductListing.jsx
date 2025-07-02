@@ -20,6 +20,8 @@ const ProductListing = () => {
         }
         fetchData()
           
+
+        return () => setProducts([])
     },[])
 
 
@@ -42,7 +44,7 @@ const ProductListing = () => {
     }, [Products]);
 
     return (
-        <div className='flex p-9 flex-wrap gap-6 items-center'>
+        <div className='flex flex-wrap gap-6 items-center min-h-[calc(100vh-136px)] p-11 pl-32'>
             {productCards.length > 0 && productCards }
         </div>
     );
