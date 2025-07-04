@@ -6,6 +6,7 @@ import { CartContext } from "../context/Cart.context";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {cartItems} = useContext(CartContext)
+
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50 min-h-[60px]">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
