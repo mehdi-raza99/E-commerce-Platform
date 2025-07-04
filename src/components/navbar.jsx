@@ -2,11 +2,13 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from 'react-icons/fa';
 import { CartContext } from "../context/Cart.context";
+import { useSelector } from "react-redux";
+import { selectCartItems, selectCartItemsQuantity } from "../store/cart/cart.selector";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const {cartItems} = useContext(CartContext)
-
+  // const {cartItems} = useContext(CartContext)
+  const cartItemsQuantity=useSelector(selectCartItemsQuantity)
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50 min-h-[60px]">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
@@ -25,7 +27,7 @@ const NavBar = () => {
             position: 'absolute', top: -8, right: -8, background: 'red',
             color: 'white', borderRadius: '50%', padding: '2px 6px', fontSize: '12px'
           }}>
-            {cartItems.length}
+            {cartItemsQuantity}
           </span>
           </Link>
         </div>
@@ -67,7 +69,7 @@ const NavBar = () => {
               position: 'absolute', top: -8, right: -8, background: 'red',
               color: 'white', borderRadius: '50%', padding: '2px 6px', fontSize: '12px'
             }}>
-              3
+              {cartItemsQuantity}
             </span>
           </div>
 

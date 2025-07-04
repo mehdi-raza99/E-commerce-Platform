@@ -1,9 +1,14 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../context/Cart.context'
 import CartItem from '../components/CartItem'
+import { useSelector } from 'react-redux'
+import { selectCartItems, selectCartTotal } from '../store/cart/cart.selector'
 
 const Cart = () => {
-    const {cartItems, cartTotal}=useContext(CartContext)
+    // const {cartItems, cartTotal}=useContext(CartContext)
+
+    const cartItems=useSelector(selectCartItems)
+    const cartTotal=useSelector(selectCartTotal)
 
 
   return (
@@ -17,7 +22,7 @@ const Cart = () => {
                 <h2 className='w-[20%]'>Remove</h2>
             </div>
 
-        {cartItems.map((cartItem) => <CartItem item={cartItem} />)}
+        {cartItems.map((cartItem) => <CartItem key={cartItem.id} item={cartItem} />)}
 
         {cartTotal > 0 && <div className='text-right font-bold text-3xl mt-7'>Total: {cartTotal}$</div>}
         </div>
