@@ -12,12 +12,45 @@ function removeItem(){
 }
 
   return (
-    <div className='flex w-[1080px] items-center mt-3'>
-        <img className='w-[20%] pr-35' src={item.image[0]} alt="" />
-        <h2 className='w-[20%]'>{item.brand}</h2>
-        <h2 className='w-[20%] flex gap-5 items-center'><button className='text-xl font-extrabold p-1 rounded-2xl cursor-pointer' onClick={() => dispatch(decrement(cartItems,item.id))}>&lt;</button>{item.quantity}<button className='text-xl font-extrabold p-1 rounded-2xl cursor-pointer' onClick={() => dispatch(increment(cartItems,item.id))}>&gt;</button></h2>
-        <h2 className='w-[20%]'>{item.price}</h2>
-        <h2 className='w-[20%] cursor-pointer' onClick={removeItem}>❌</h2>
+    // Responsive: grid on md+, stacked on small
+    <div className="grid grid-cols-1 md:grid-cols-5 items-center border-b py-4 gap-4 text-sm md:text-base">
+
+      {/* Product image */}
+      <div className="flex justify-center">
+        <img className="w-24 h-24 object-contain" src={item.image[0]} alt={item.brand} />
+      </div>
+
+      {/* Description */}
+      <div className="text-center md:text-left">
+        <h2 className="font-medium">{item.brand}</h2>
+      </div>
+
+      {/* Quantity */}
+      <div className="flex items-center justify-center gap-3">
+        <button
+          className="text-lg font-bold px-2 py-1 rounded border cursor-pointer bg-red-500"
+          onClick={() => dispatch(decrement(cartItems, item.id))}
+        >
+          &lt;
+        </button>
+        <span>{item.quantity}</span>
+        <button
+          className="text-lg font-bold px-2 py-1 rounded border cursor-pointer bg-green-600"
+          onClick={() => dispatch(increment(cartItems, item.id))}
+        >
+          &gt;
+        </button>
+      </div>
+
+      {/* Price */}
+      <div className="text-center font-semibold">{item.price}$</div>
+
+      {/* Remove */}
+      <div className="flex justify-center">
+        <button onClick={removeItem} className="text-xl hover:text-red-500">
+          ❌
+        </button>
+      </div>
     </div>
   )
 }

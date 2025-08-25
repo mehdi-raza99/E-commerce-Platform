@@ -35,7 +35,7 @@ const ProductListing = () => {
   }, [category, dispatch]); // include category
 
   return (
-    <div className='flex flex-wrap gap-6 items-center min-h-[calc(100vh-136px)] p-11 pl-32'>
+    <div className='flex flex-wrap gap-6 items-center min-h-[calc(100vh-136px)] p-7 md:pl-14 justify-center 2xl:justify-start'>
       {products.length > 0 && (
         products.map((product) => (
           <ProductCard
