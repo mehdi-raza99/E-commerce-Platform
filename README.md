@@ -1,12 +1,54 @@
-# React + Vite
+# E-commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance e-commerce web application built with a focus on seamless user experience, responsive design, and robust state management.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend Framework:** React 19 (via Vite)
+- **Styling:** Tailwind CSS v4
+- **State Management:** Redux & Redux-Persist (with Redux Logger for debugging)
+- **Routing:** React Router v7
+- **Icons:** React Icons
 
-## Expanding the ESLint configuration
+## ✨ Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Responsive Design:** Mobile-first architecture ensures a seamless shopping experience across all devices.
+- **Persistent Cart:** Utilizes `redux-persist` to maintain users' shopping carts across browser sessions, completely eliminating data loss on reloads.
+- **Dynamic Routing:** Implemented with `createBrowserRouter` to enable instant navigation between product catalogs, category pages, and checkout flows.
+- **Modular Architecture:** Built with highly reusable UI components (e.g., `ProductCard`, `CartItem`, `CategoryCard`) for scalable and maintainable code.
+- **Real-Time Data Fetching:** Efficient front-end utilities for querying and categorizing product information dynamically.
+
+## 📦 Getting Started
+
+### Prerequisites
+
+Make sure you have Node.js installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mehdi-raza99/E-commerce-Platform.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd E-commerce-Platform
+   ```
+
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 🛠️ Project Structure
+
+- `src/components/`: Reusable specific UI components (Navbars, Cards).
+- `src/pages/`: Top-level routing pages (Home, Cart, Contact, About, Category Product Listing).
+- `src/store/`: Redux configuration, continuous root reducers, and persisted state logic.
+- `src/utils/`: Helper functions like filtering and API data-fetching.
